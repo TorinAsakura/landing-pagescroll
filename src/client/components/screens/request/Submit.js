@@ -9,11 +9,19 @@ const styles = StyleSheet.create({
     fontSize: '36px',
     marginTop: '20px',
     marginBottom: '40px',
+    cursor: 'pointer',
+  },
+  disabled: {
+    cursor: 'initial',
+    color: '#797979',
   },
 })
 
-const Submit = () => (
-  <a className={styles()}>
+const Submit = ({ disabled, onClick }) => (
+  <a
+    className={styles({ disabled })}
+    onClick={onClick}
+  >
     ОТПРАВИТЬ
   </a>
 )

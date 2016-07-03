@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  lb:
+    build: ./config/images/nginx
+    links:
+      - app
+    ports:
+    - "80:80"
+
+  app:
+    build: .
+    ports:
+    - "3000:3000"

@@ -47,3 +47,7 @@ dist
 
 # Deploy configuration
 .ftpconfig
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
