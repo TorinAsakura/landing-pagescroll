@@ -1,0 +1,24 @@
+html,
+body,
+.container {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Turum2";
+  src: url(/fonts/Turum2-Regular.eot);
+  src: url(/fonts/Turum2-Regular.eot?#iefix) format("embedded-opentype"), url(/fonts/Turum2-Regular.woff) format("woff"), url(/fonts/Turum2-Regular.otf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Turum2";
+  src: url(/fonts/Turum2-Bold.eot);
+  src: url(/fonts/Turum2-Bold.eot?#iefix) format("embedded-opentype"), url(/fonts/Turum2-Bold.woff) format("woff"), url(/fonts/Turum2-Bold.otf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
