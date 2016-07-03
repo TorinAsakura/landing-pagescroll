@@ -61,7 +61,7 @@ router.post('/request', (req, res) => {
 
         return
       }
-
+      console.log(doc)
       res.json({})
     })
   })
