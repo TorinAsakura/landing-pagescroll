@@ -8,6 +8,9 @@ services:
     ports:
       - "8496:80"
 
+  db:
+    image: mongo
+
   npm:
     image: node
     working_dir: /workspace
@@ -17,9 +20,13 @@ services:
 
   dev:
     image: node
+    depends_on:
+      - db
     working_dir: /workspace
     volumes:
       - ./:/workspace
+    environment:
+      - DB_HOST=db
     entrypoint: npm run dev
     ports:
       - "3030:3030"
