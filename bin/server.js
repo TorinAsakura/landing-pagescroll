@@ -3,7 +3,7 @@ require('babel-register')
 var configureApp = require('../src/server/app').default
 var app = configureApp()
 
-app.listen(3000, function(error) {
+app.listen(3000, '127.0.0.1', function(error) {
   if (error) {
     throw error
   }

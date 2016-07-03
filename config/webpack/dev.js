@@ -4,11 +4,13 @@ import autoprefixer from 'autoprefixer'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import CssResolvePlugin from 'quantum/lib/webpack/css-resolve-plugin'
 
+export const context = path.resolve(__dirname, './../../src/client')
+
 export const entry = [
   'babel-polyfill',
   'webpack-hot-middleware/client',
   'react-hot-loader/patch',
-  './src/client/index.js',
+  './index.js',
 ]
 
 export const output = {

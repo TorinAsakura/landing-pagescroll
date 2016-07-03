@@ -5,9 +5,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import CssResolvePlugin from 'quantum/lib/webpack/css-resolve-plugin'
 
+export const context = path.resolve(__dirname, './../../src/client')
+
 export const entry = [
   'babel-polyfill',
-  './src/client/index.js',
+  './index.js',
 ]
 
 export const output = {
