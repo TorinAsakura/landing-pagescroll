@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const Menu = ({ width, height, onRequest, onClose }) => (
+const Menu = ({ width, height, onRequest, onSupport, onClose }) => (
   <div
     className={styles()}
     style={{ width, height }}
@@ -25,6 +25,7 @@ const Menu = ({ width, height, onRequest, onClose }) => (
     <Close onClick={onClose} />
     <Content
       onRequest={onRequest}
+      onSupport={onSupport}
     />
   </div>
 )
