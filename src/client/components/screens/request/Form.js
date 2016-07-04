@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet } from 'quantum'
 import Title from './Title'
 import Submit from './Submit'
+import Examples from './Examples'
+import Description from './Description'
 import Field, { FileField } from './Field'
 import LicenseField from './license/LicenseField'
 import validate from './utils/validate'
@@ -9,9 +11,10 @@ import validate from './utils/validate'
 const styles = StyleSheet.create({
   self: {
     display: 'flex',
-    flexBasis: '40%',
+    flexBasis: '45%',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: '40px',
   },
 })
 
@@ -117,6 +120,7 @@ class Form extends Component {
     return (
       <div className={styles()}>
         <div>
+          <Description />
           <Title />
           <Field
             value={fullName}
@@ -152,6 +156,7 @@ class Form extends Component {
             disabled={!canSubmit}
             onClick={this.onSubmit}
           />
+          <Examples />
           <LicenseField
             confirmed={licenseConfirmed}
             onConfirm={this.onChangeConfirm}
