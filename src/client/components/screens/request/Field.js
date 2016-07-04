@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   self: {
     position: 'relative',
     display: 'block',
+    maxWidth: '225px',
     '& input': {
       background: 'transparent',
       borderWidth: '0px',
