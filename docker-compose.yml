@@ -33,9 +33,13 @@ services:
 
   server:
     image: node
+    depends_on:
+      - db
     working_dir: /workspace
     volumes:
       - ./:/workspace
+    environment:
+      - DB_HOST=db
     entrypoint: npm run server
     ports:
       - "3000:3000"

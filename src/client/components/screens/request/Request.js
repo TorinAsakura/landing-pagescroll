@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'quantum'
 import NextPage from '../../NextPage'
+import License from './license/License'
 import Form from './Form'
 
 const styles = StyleSheet.create({
@@ -18,12 +19,43 @@ const styles = StyleSheet.create({
 })
 
 class Request extends Component {
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      showLicense: false,
+    }
+  }
+
+  onShowLicense = () => {
+    this.setState({ showLicense: true })
+  }
+
+  onCloseLicense = () => {
+    this.setState({ showLicense: false })
+  }
+
+  renderLicense() {
+    const { showLicense } = this.state
+
+    if (!showLicense) {
+      return null
+    }
+
+    return (
+      <License
+        onClose={this.onCloseLicense}
+      />
+    )
+  }
+
   render() {
     const { width, height, onNext } = this.props
 
     return (
       <div style={{ width, height }} className={styles()}>
-        <Form />
+        {this.renderLicense()}
+        <Form onShowLicense={this.onShowLicense} />
         <NextPage onClick={onNext} />
       </div>
     )

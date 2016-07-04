@@ -5,11 +5,11 @@ import Title from './Title'
 const styles = StyleSheet.create({
   self: {
     color: '#ffffff',
-    fontSize: '28px',
+    fontSize: '20px',
     fontFamily: 'Turum2',
-    maxWidth: '255px',
+    maxWidth: '650px',
     textAlign: 'center',
-    margin: '30px 0',
+    margin: '10px 0',
   },
 })
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet } from 'quantum'
 import Title from './Title'
 import Summary from './Summary'
+import Container from './Container'
 
 const styles = StyleSheet.create({
   self: {
@@ -15,8 +16,10 @@ const styles = StyleSheet.create({
 
 const Content = () => (
   <div className={styles()}>
-    <Title />
-    <Summary />
+    <Container>
+      <Title />
+      <Summary />
+    </Container>
   </div>
 )
 

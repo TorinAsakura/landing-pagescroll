@@ -3,6 +3,7 @@ import { StyleSheet } from 'quantum'
 import Title from './Title'
 import Submit from './Submit'
 import Field from './Field'
+import LicenseField from './license/LicenseField'
 import validate from './utils/validate'
 
 const styles = StyleSheet.create({
@@ -28,6 +29,7 @@ class Form extends Component {
       },
       complete: {},
       canSubmit: false,
+      licenseConfirmed: false,
     }
   }
 
@@ -37,9 +39,15 @@ class Form extends Component {
 
       this.setState({
         complete,
-        canSubmit: Object.keys(complete).length == 5,
+        canSubmit: Object.keys(complete).length == 6,
       })
     }
+  }
+
+  onChangeConfirm = () => {
+    const { fields } = this.state
+
+    this.setState({ fields: { ...fields, licenseConfirmed: !fields.licenseConfirmed } })
   }
 
   onChangeFullName = value => {
@@ -102,7 +110,8 @@ class Form extends Component {
   }
 
   render() {
-    const { fullName, age, position, email } = this.state.fields
+    const { onShowLicense } = this.props
+    const { fullName, age, position, email, licenseConfirmed } = this.state.fields
     const { complete, canSubmit } = this.state
 
     return (
@@ -142,6 +151,11 @@ class Form extends Component {
           <Submit
             disabled={!canSubmit}
             onClick={this.onSubmit}
+          />
+          <LicenseField
+            confirmed={licenseConfirmed}
+            onConfirm={this.onChangeConfirm}
+            onShow={onShowLicense}
           />
         </div>
       </div>

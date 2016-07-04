@@ -8,6 +8,7 @@ const File = t.struct({
 const Min = t.subtype(t.String, value => value.length > 2, 'Min')
 const Email = t.subtype(t.String, value => /.+\@.+\..+/.test(value), 'Email')
 const VideoFile = t.subtype(File, ({ type }) => type.includes('video'), 'VideoFile')
+const License = t.subtype(t.Boolean, value => value, 'License')
 
 const Request = t.struct({
   fullName: Min, 
@@ -15,6 +16,7 @@ const Request = t.struct({
   position: Min,
   email: Email,
   video: VideoFile,
+  licenseConfirmed: License,
 })
 
 const validate = (value = {}) => {
