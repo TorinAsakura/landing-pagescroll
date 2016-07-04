@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'quantum'
 import Images from './Images'
+import Footer from './Footer'
 
 const styles = StyleSheet.create({
   self: {
@@ -8,6 +9,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
   },
 })
 
@@ -16,8 +19,10 @@ class Gallery extends Component {
     interval: 5000,
     images: [
       '/images/gallery1.jpg',
-      '/images/gallery1.jpg',
-    ]
+      '/images/gallery2.jpg',
+      '/images/gallery3.jpg',
+    ],
+    footerHeight: 150,
   }
 
   constructor(props, context) {
@@ -62,16 +67,19 @@ class Gallery extends Component {
   }
 
   render() {
-    const { width, height, images } = this.props
+    const { width, height, images, footerHeight } = this.props
     const { active } = this.state
 
     return (
       <div style={{ width, height }} className={styles()}>
         <Images
           width={width}
-          height={height}
+          height={height - footerHeight}
           images={images}
           active={active}
+        />
+        <Footer
+          height={footerHeight}
         />
       </div>
     )
