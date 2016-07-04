@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
     display: 'block',
     fontFamily: 'Turum2',
     color: '#d2a700',
-    fontSize: '36px',
+    fontSize: '32px',
     marginTop: '20px',
-    marginBottom: '40px',
+    marginBottom: '0px',
     cursor: 'pointer',
   },
   disabled: {
