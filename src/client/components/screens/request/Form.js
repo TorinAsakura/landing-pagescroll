@@ -6,6 +6,7 @@ import Examples from './Examples'
 import Description from './Description'
 import Field, { FileField } from './Field'
 import LicenseField from './license/LicenseField'
+import Message from './Message'
 import validate from './utils/validate'
 
 const styles = StyleSheet.create({
@@ -33,6 +34,7 @@ class Form extends Component {
       complete: {},
       canSubmit: false,
       licenseConfirmed: false,
+      message: null,
     }
   }
 
@@ -106,19 +108,30 @@ class Form extends Component {
           video: null,
         },
         complete: {},
+        message: 'Спасибо! С нетерпением ждем увидеть твои футбольные навыки. Твое видео появится на нашем канале в ближайшее время.',
       })
     } else {
-      this.setState({ canSubmit: true })
+      this.setState({
+        canSubmit: true,
+        message: 'Твоя заявка не загрузилась, попробуй еще раз.',
+      })
     }
+
+    setTimeout(() => {
+      this.setState({ message: null })
+    }, 5000)
   }
 
   render() {
     const { onShowLicense } = this.props
     const { fullName, age, position, email, video, licenseConfirmed } = this.state.fields
-    const { complete, canSubmit } = this.state
+    const { complete, canSubmit, message } = this.state
 
     return (
       <div className={styles()}>
+        <Message>
+          {message}
+        </Message>
         <div>
           <Description />
           <Title />
