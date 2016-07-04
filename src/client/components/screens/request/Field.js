@@ -17,8 +17,21 @@ const styles = StyleSheet.create({
       outline: 'none',
       fontFamily: 'Turum2',
       fontSize: '32px',
-      color: '#797979',
+      color: '#a9a9a9',
       minWidth: '210px',
+      '&:focus': {
+        borderBottomColor: '#d2a700',
+        color: '#ffffff',
+      },
+      '&::-webkit-input-placeholder': {
+        color: '#797979',
+      },
+      '&::-moz-placeholder': {
+        color: '#797979',
+      },
+      '&:-ms-input-placeholder': {
+        color: '#797979',
+      },
     },
   },
   'type=file': {
@@ -40,7 +53,7 @@ const styles = StyleSheet.create({
         fontSize: '32px',
         color: '#797979',
         minWidth: '210px',
-        content: '"файл для загрузки"',
+        content: '"видео для загрузки"',
         position: 'absolute',
         top: '0px',
         left: '0px',

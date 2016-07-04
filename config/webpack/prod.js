@@ -75,4 +75,5 @@ export const plugins = [
       NODE_ENV: JSON.stringify('production'),
     },
   }),
+  new webpack.optimize.UglifyJsPlugin(),
 ]
