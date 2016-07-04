@@ -39,7 +39,7 @@ const LicenseField = ({ confirmed, onConfirm, onShow }) => (
       onConfirm={onConfirm}
     />
     <span>
-      Я согласен с <a onClick={onShow}>правилами участия в проекте</a>
+      Я согласен с <a onClick={onShow}>условиями участия в проекте</a>
     </span>
   </div>
 )

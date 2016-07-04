@@ -50,6 +50,8 @@ router.post('/request', (req, res) => {
     if (!(files && files.video && files.video[0])) {
       res.status(422)
       res.json({})
+
+      return
     }
 
     const data = formatData(fields, files.video[0])
