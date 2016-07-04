@@ -22,8 +22,8 @@ const Video = ({ width, height, onClose }) => (
     style={{ width, height }}
   >
     <Close onClick={onClose} />
-    <Player />
   </div>
 )
 
 export default Video
+// <Player />

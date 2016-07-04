@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
   },
 })
 
-const Content = ({ onRequest }) => (
+const Content = ({ onRequest, onSupport }) => (
   <div className={styles()}>
     <a onClick={onRequest}>
       ОТПРАВИТЬ ЗАЯВКУ
     </a>
-    <a>
+    <a onClick={onSupport}>
       ПОДДЕРЖАТЬ СБОРНУЮ
     </a>
   </div>

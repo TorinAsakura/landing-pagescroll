@@ -68,6 +68,14 @@ class App extends Component {
     this.setState({ showVideo: false })
   }
 
+  onSupport = () => {
+    this.setState({
+      showMenu: false,
+    }, () => {
+      this.setState({ active: 2 })
+    })
+  }
+
   onRequest = () => {
     this.setState({
       showMenu: false,
@@ -87,6 +95,7 @@ class App extends Component {
       <Menu
         width={width}
         height={height}
+        onSupport={this.onSupport}
         onRequest={this.onRequest}
         onClose={this.onCloseMenu}
       />
