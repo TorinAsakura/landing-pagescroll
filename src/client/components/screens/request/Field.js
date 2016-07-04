@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { findDOMNode } from 'react-dom'
 import { StyleSheet } from 'quantum'
 
 const styles = StyleSheet.create({
@@ -36,28 +37,7 @@ const styles = StyleSheet.create({
   },
   'type=file': {
     '& input': {
-      visibility: 'visible',
-      minWidth: '0px',
-      width: '0px',
-      '&:after': {
-        background: 'transparent',
-        borderWidth: '0px',
-        borderBottom: '1px solid #797979',
-        borderRadius: '0px',
-        paddingBottom: '2px',
-        paddingLeft: '0px',
-        display: 'block',
-        marginBottom: '10px',
-        outline: 'none',
-        fontFamily: 'Turum2',
-        fontSize: '32px',
-        color: '#797979',
-        minWidth: '210px',
-        content: '"видео для загрузки"',
-        position: 'absolute',
-        top: '0px',
-        left: '0px',
-      },
+      cursor: 'pointer',
     },
   },
 })
@@ -85,10 +65,57 @@ const Field = ({ type, value, placeholder, complete, onChange = f => f }) => (
       type={type}
       value={value}
       placeholder={placeholder}
-      onChange={({ target }) => onChange(target.files || target.value)}
+      onChange={({ target }) => onChange(target.value)}
     />
     {complete ? <Complete /> : null}
   </span>
 )
+
+class FileField extends Component {
+  onTrigger = () => {
+    findDOMNode(this.refs.fileInput).click()
+  }
+
+  onChange = ({ target }) => {
+    const { onChange } = this.props
+
+    if (onChange) {
+      onChange(target.files)
+    }
+  }
+
+  getFileName() {
+    const { value = {} } = this.props
+
+    return value && value.name ? value.name : ''
+  }
+
+  render() {
+    const { placeholder, complete } = this.props
+
+    return (
+      <span className={styles({ type: 'file' })}>
+        <input
+          readOnly
+          placeholder={placeholder}
+          value={this.getFileName()}
+          onClick={this.onTrigger}
+        />
+        <input
+          type='file'
+          ref='fileInput'
+          accept='video/*'
+          style={{ position: 'absolute', top: '-9999px' }}
+          onChange={this.onChange}
+        />
+        {complete ? <Complete /> : null}
+      </span>
+    )
+  }
+}
+
+export {
+  FileField,
+}
 
 export default Field

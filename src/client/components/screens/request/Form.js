@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet } from 'quantum'
 import Title from './Title'
 import Submit from './Submit'
-import Field from './Field'
+import Field, { FileField } from './Field'
 import LicenseField from './license/LicenseField'
 import validate from './utils/validate'
 
@@ -111,7 +111,7 @@ class Form extends Component {
 
   render() {
     const { onShowLicense } = this.props
-    const { fullName, age, position, email, licenseConfirmed } = this.state.fields
+    const { fullName, age, position, email, video, licenseConfirmed } = this.state.fields
     const { complete, canSubmit } = this.state
 
     return (
@@ -142,8 +142,8 @@ class Form extends Component {
             complete={complete.email}
             onChange={this.onChangeEmail}
           />
-          <Field
-            type='file'
+          <FileField
+            value={video}
             complete={complete.video}
             placeholder='ссылка на видео профиль'
             onChange={this.onChangeVideo}

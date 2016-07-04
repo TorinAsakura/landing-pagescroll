@@ -15,7 +15,7 @@ const Player = () => (
     width='100%'
     height='100%'
     className={styles()}
-    url='http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+    url='https://www.youtube.com/watch?v=kRqcTR0tdHA'
   />
 )
 

@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     backgroundRepeat: 'no-repeat',
     display: 'flex',
     flexDirection: 'row',
+    overflow: 'hidden',
   },
 })
 
