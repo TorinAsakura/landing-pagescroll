@@ -162,7 +162,7 @@ class Form extends Component {
           <FileField
             value={video}
             complete={complete.video}
-            placeholder='ссылка на видео профиль'
+            placeholder='загрузить видео'
             onChange={this.onChangeVideo}
           />
           <Submit

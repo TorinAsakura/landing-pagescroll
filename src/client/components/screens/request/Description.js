@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 const Description = () => (
   <div className={styles()}>
     Задача простая: покажи, как ты обращаешься с мячом. Попроси своего друга снять, как ты выполняешь наше тестовое задание. 
-    Пример задания ты найдешь здесь. <a href='https://www.youtube.com/watch?v=IDqQiXfGagk' target='_blank'>(ссылка на видео на нашем YouTube канале)</a>
+    Пример задания ты найдешь <a href='https://www.youtube.com/watch?v=IDqQiXfGagk' target='_blank'>здесь</a>, если ты полевой игрок и <a href='https://www.youtube.com/watch?v=K07sZFB4aHw' target='_blank'>здесь</a>, если ты вратарь.
     <div>
       ВАЖНО! Съемка, должна быть непрерывной, одним кадром, без пауз и монтажа! Удачи!
     </div>
