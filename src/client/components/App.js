@@ -68,7 +68,7 @@ class App extends Component {
     this.setState({ showVideo: false })
   }
 
-  onSupport = () => {
+  onSteps = () => {
     this.setState({
       showMenu: false,
     }, () => {
