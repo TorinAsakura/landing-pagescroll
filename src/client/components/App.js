@@ -95,7 +95,7 @@ class App extends Component {
       <Menu
         width={width}
         height={height}
-        onSupport={this.onSupport}
+        onSteps={this.onSteps}
         onRequest={this.onRequest}
         onClose={this.onCloseMenu}
       />

@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     '& a': {
       color: '#ffffff',
-      textDecoration: 'none',
+      textDecoration: 'underline',
       '&:hover': {
         opacity: 0.8,
       },
