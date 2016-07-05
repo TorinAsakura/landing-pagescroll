@@ -15,7 +15,7 @@ const Player = () => (
     width='100%'
     height='100%'
     className={styles()}
-    url='https://www.youtube.com/watch?v=kRqcTR0tdHA'
+    url='https://www.youtube.com/watch?v=OHD81IUi5rQ'
   />
 )
 
