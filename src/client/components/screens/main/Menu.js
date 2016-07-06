@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const Menu = ({ width, height, onRequest, onSteps, onClose }) => (
+const Menu = ({ width, height, onRequest, onSteps, onAbout, onClose }) => (
   <div
     className={styles()}
     style={{ width, height }}
@@ -26,6 +26,7 @@ const Menu = ({ width, height, onRequest, onSteps, onClose }) => (
     <Content
       onRequest={onRequest}
       onSteps={onSteps}
+      onAbout={onAbout}
     />
   </div>
 )
