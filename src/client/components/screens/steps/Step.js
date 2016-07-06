@@ -13,11 +13,16 @@ const styles = StyleSheet.create({
   },
 })
 
-const Step = ({ number, children }) => (
+const Step = ({ title, subtitle, children }) => (
   <div className={styles()}>
     <Title>
-      {number}
+      {title}
     </Title>
+    {subtitle ? (
+      <Title small>
+        {subtitle}
+      </Title>
+    ): null}
     {children}
   </div>
 )

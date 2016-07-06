@@ -22,8 +22,11 @@ const styles = StyleSheet.create({
   },
 })
 
-const Content = ({ onRequest, onSteps }) => (
+const Content = ({ onRequest, onSteps, onAbout }) => (
   <div className={styles()}>
+    <a onClick={onAbout}>
+      НАРОДНАЯ СБОРНАЯ
+    </a>
     <a onClick={onSteps}>
       ЭТАПЫ ПРОЕКТА
     </a>

@@ -7,12 +7,27 @@ const styles = StyleSheet.create({
     fontSize: '48px',
     fontFamily: 'Turum2',
   },
+  small: {
+    fontSize: '28px',
+    lineHeight: '14px',
+    marginBottom: '15px',
+  }
 })
 
-const Title = ({ children }) => (
-  <div className={styles()}>
-    &ndash; {children} &ndash;
-  </div>
-)
+const Title = ({ small, children }) => {
+  if (small) {
+    return (
+      <div className={styles({ small })}>
+        {children}
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles()}>
+      &ndash; {children} &ndash;
+    </div>
+  )
+}
 
 export default Title
