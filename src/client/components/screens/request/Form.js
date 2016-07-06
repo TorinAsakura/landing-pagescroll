@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
   'size=small': {
     transform: 'scaleY(0.7)',
   },
+  smallDesktop: {
+    marginBottom: '45px',
+  },
 })
 
 class Form extends Component {
@@ -129,12 +132,12 @@ class Form extends Component {
   }
 
   render() {
-    const { size, onShowLicense } = this.props
+    const { size, smallDesktop, onShowLicense } = this.props
     const { fullName, age, position, email, video, licenseConfirmed } = this.state.fields
     const { complete, canSubmit, message } = this.state
 
     return (
-      <div className={styles({ size })}>
+      <div className={styles({ size, smallDesktop })}>
         <Message>
           {message}
         </Message>
