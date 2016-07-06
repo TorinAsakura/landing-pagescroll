@@ -11,15 +11,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: '10px 0',
   },
+  squeeze: {
+    maxWidth: 'initial',
+    margin: '5px 0',
+    fontSize: '18px',
+  }
 })
 
-const Step = ({ title, subtitle, children }) => (
-  <div className={styles()}>
-    <Title>
+const Step = ({ title, subtitle, squeeze, children }) => (
+  <div className={styles({ squeeze })}>
+    <Title squeeze={squeeze}>
       {title}
     </Title>
     {subtitle ? (
-      <Title small>
+      <Title small squeeze={squeeze}>
         {subtitle}
       </Title>
     ): null}

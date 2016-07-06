@@ -7,14 +7,17 @@ const styles = StyleSheet.create({
     fontSize: '48px',
     fontFamily: 'Turum2',
   },
+  squeeze: {
+    fontSize: '32px',
+  },
   small: {
     fontSize: '28px',
     lineHeight: '14px',
     marginBottom: '15px',
-  }
+  },
 })
 
-const Title = ({ small, children }) => {
+const Title = ({ small, squeeze, children }) => {
   if (small) {
     return (
       <div className={styles({ small })}>
@@ -24,7 +27,7 @@ const Title = ({ small, children }) => {
   }
 
   return (
-    <div className={styles()}>
+    <div className={styles({ squeeze })}>
       &ndash; {children} &ndash;
     </div>
   )
