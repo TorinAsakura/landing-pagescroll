@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft: '40px',
   },
+  'size=middle': {
+    transform: 'scaleY(0.8)',
+  },
+  'size=small': {
+    transform: 'scaleY(0.7)',
+  },
 })
 
 class Form extends Component {
@@ -123,12 +129,12 @@ class Form extends Component {
   }
 
   render() {
-    const { onShowLicense } = this.props
+    const { size, onShowLicense } = this.props
     const { fullName, age, position, email, video, licenseConfirmed } = this.state.fields
     const { complete, canSubmit, message } = this.state
 
     return (
-      <div className={styles()}>
+      <div className={styles({ size })}>
         <Message>
           {message}
         </Message>

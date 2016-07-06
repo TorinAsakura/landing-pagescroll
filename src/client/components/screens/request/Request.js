@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     overflow: 'hidden',
   },
+  'width=middle': {
+    backgroundPosition: '50% 50%',
+  },
+  'width=small': {
+    backgroundPosition: '50% 50%',
+  },
 })
 
 class Request extends Component {
@@ -36,6 +42,30 @@ class Request extends Component {
     this.setState({ showLicense: false })
   }
 
+  getWidthMod(width) {
+    if (width < 740) {
+      return 'small'
+    }
+
+    if (width < 1000) {
+      return 'middle'
+    }
+
+    return null
+  }
+
+  getHeightMod(height) {
+    if (height < 450) {
+      return 'small'
+    }
+
+    if (height < 1000) {
+      return 'middle'
+    }
+
+    return
+  }
+
   renderLicense() {
     const { showLicense } = this.state
 
@@ -52,11 +82,19 @@ class Request extends Component {
 
   render() {
     const { width, height, onNext } = this.props
+    const widthMod = this.getWidthMod(width)
+    const heightMod = this.getHeightMod(height)
 
     return (
-      <div style={{ width, height }} className={styles()}>
+      <div
+        style={{ width, height }}
+        className={styles({ width: widthMod, height: heightMod, })}
+      >
         {this.renderLicense()}
-        <Form onShowLicense={this.onShowLicense} />
+        <Form
+          size={heightMod}
+          onShowLicense={this.onShowLicense}
+        />
         <NextPage onClick={onNext} />
       </div>
     )
