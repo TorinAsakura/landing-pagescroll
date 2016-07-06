@@ -66,6 +66,10 @@ class Request extends Component {
     return
   }
 
+  isSmallMod(width, height) {
+    return width > 1024 && height < 720
+  }
+
   renderLicense() {
     const { showLicense } = this.state
 
@@ -84,6 +88,7 @@ class Request extends Component {
     const { width, height, onNext } = this.props
     const widthMod = this.getWidthMod(width)
     const heightMod = this.getHeightMod(height)
+    const smallDesktop = this.isSmallMod(width, height)
 
     return (
       <div
@@ -93,6 +98,7 @@ class Request extends Component {
         {this.renderLicense()}
         <Form
           size={heightMod}
+          smallDesktop={smallDesktop}
           onShowLicense={this.onShowLicense}
         />
         <NextPage onClick={onNext} />
