@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "body-parser": "^1.15.2",
+    "encodeurl": "^1.0.1",
     "gsap": "^1.18.5",
     "mongoose": "^4.5.3",
     "multiparty": "^4.1.2",

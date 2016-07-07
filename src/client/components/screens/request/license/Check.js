@@ -26,11 +26,17 @@ const styles = StyleSheet.create({
       background: '#d2a700',
     },
   },
+  'size=middle': {
+    transform: 'scaleX(0.8)',
+  },
+  'size=small': {
+    transform: 'scaleX(0.7)',
+  },
 })
 
-const Check = ({ confirmed, onConfirm }) => (
+const Check = ({ size, confirmed, onConfirm }) => (
   <span
-    className={styles({ confirmed })}
+    className={styles({ size, confirmed })}
     onClick={onConfirm}
   />
 )

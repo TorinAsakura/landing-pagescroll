@@ -32,9 +32,10 @@ const styles = StyleSheet.create({
   },
 })
 
-const LicenseField = ({ confirmed, onConfirm, onShow }) => (
+const LicenseField = ({ size, confirmed, onConfirm, onShow }) => (
   <div className={styles()}>
     <Check
+      size={size}
       confirmed={confirmed}
       onConfirm={onConfirm}
     />

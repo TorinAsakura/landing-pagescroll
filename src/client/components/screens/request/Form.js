@@ -180,6 +180,7 @@ class Form extends Component {
           />
           <Examples />
           <LicenseField
+            size={size}
             confirmed={licenseConfirmed}
             onConfirm={this.onChangeConfirm}
             onShow={onShowLicense}
