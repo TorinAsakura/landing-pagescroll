@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet } from 'quantum'
 import Title from './Title'
+import Content from './Content'
 
 const styles = StyleSheet.create({
   self: {
@@ -28,7 +29,9 @@ const Step = ({ title, subtitle, squeeze, children }) => (
         {subtitle}
       </Title>
     ): null}
-    {children}
+    <Content>
+      {children}
+    </Content>
   </div>
 )
 
