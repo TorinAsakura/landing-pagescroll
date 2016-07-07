@@ -1,6 +1,7 @@
 import path from 'path'
 import express from 'express'
 import passport from 'passport'
+import encodeUrl from 'encodeurl'
 import { BasicStrategy } from 'passport-http'
 import { renderToString } from 'react-dom/server'
 import Request from '../models/request'
@@ -39,8 +40,10 @@ router.get('/secured/:id', isAuthenticated, (req, res) => {
       res.send()
     }
 
+    const filename = encodeUrl(doc.video.originalFilename)
+
     const headers = {
-      'Content-Disposition': `attachment; filename="${doc.video.originalFilename}"`,
+      'Content-Disposition': `attachment; filename="${filename}"`,
     }
 
     res.sendFile(path.join(uploadDir, doc.video.path), { headers })

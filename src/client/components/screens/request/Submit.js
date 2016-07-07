@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 const Submit = ({ disabled, onClick }) => (
   <a
     className={styles({ disabled })}
-    onClick={onClick}
+    onClick={disabled ? null : onClick}
   >
     ОТПРАВИТЬ
   </a>
